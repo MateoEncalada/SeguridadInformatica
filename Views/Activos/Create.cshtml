@@ -1,0 +1,279 @@
+﻿@model SeguridadInformatica.Models.Activos
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Ingrese sus activos</h1>
+
+<h4>Activos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select asp-for="Tipo" class="form-control">
+                    <option value=" ">----- Seleccione el tipo de activo -----</option>
+                    <option value="Datos de carácter personal">Datos de carácter personal</option>
+                    <option value="Arquitectura del sistema">Arquitectura del sistema</option>
+                    <option value="[D] Datos / Información">[D] Datos / Información</option>
+                    <option value="[K] Claves criptograficas">[K] Claves criptograficas</option>
+                    <option value="[S] Servicios">[S] Servicios</option>
+                    <option value="[SW] Software - Aplicaciones informáticas">[SW] Software - Aplicaciones informáticas</option>
+                    <option value="[HW] Hardware - Equipamiento informático">[HW] Hardware - Equipamiento informático</option>
+                    <option value="[COM] Redes de comunicación">[COM] Redes de comunicación</option>
+                    <option value="[MEDIA] Soporte de información">[MEDIA] Soporte de información</option>
+                    <option value="[AUX] Equipamiento Auxiliar">[AUX] Equipamiento Auxiliar</option>
+                    <option value="[L] Instalaciones">[L] Instalaciones</option>
+                    <option value="[P] Personal">[P] Personal</option>
+                </select>
+                @*<input asp-for="TipoA" class="form-control" />*@
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disponibilidad" class="control-label"></label>
+                <select asp-for="Disponibilidad" class="form-control">
+                    <option value=" ">----- Seleccione el peso del activo -----</option>
+                    <option value="0.0">0.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
+                </select>
+                @*<input asp-for="TipoA" class="form-control" />*@
+                <span asp-validation-for="Disponibilidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Integridad" class="control-label"></label>
+                <select asp-for="Integridad" class="form-control">
+                    <option value=" ">----- Seleccione el peso del activo -----</option>
+                    <option value="0.0">0.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
+                </select>
+                @*<input asp-for="TipoA" class="form-control" />*@
+                <span asp-validation-for="Integridad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Confidencialidad" class="control-label"></label>
+                <select asp-for="Confidencialidad" class="form-control">
+                    <option value=" ">----- Seleccione el peso del activo -----</option>
+                    <option value="0.0">0.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
+                </select>
+                @*<input asp-for="TipoA" class="form-control" />*@
+                <span asp-validation-for="Confidencialidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                @*<input asp-for="Descripcion" class="form-control" />*@
+                <select asp-for="Descripcion" class="form-control">
+                    <option value=" ">----- Seleccione el subactivo -----</option>
+                    <option value="[arch] Arquitectura del sistema" disabled>[arch] Arquitectura del sistema</option>
+                    <option value="[sap] punto de acceso al servicio">[sap] punto de acceso al servicio</option>
+                    <option value="[ip] punto de interconexion">[ip] punto de interconexion</option>
+                    <option value="[ext] proporcionado por terceros">[ext] proporcionado por terceros</option>
+                    <option value="[D] Datos/Informacion" disabled>[D] Datos/Informacion</option>
+                    <option value="[files] ficheros">[files] ficheros</option>
+                    <option value="[backup] copias de respaldo">[backup] copias de respaldo</option>
+                    <option value="[conf] datos de configuracion">[conf] datos de configuracion</option>
+                    <option value="[int] datos de gestion interna">[int] datos de gestion interna</option>
+                    <option value="[password] credenciales">[password] credenciales</option>
+                    <option value="[auth] datos de validacion de credenciales">[auth] datos de validacion de credenciales</option>
+                    <option value="[acl] datos de control de acceso">[acl] datos de control de acceso</option>
+                    <option value="[log] registro de actividad">[log] registro de actividad</option>
+                    <option value="[source] codigo fuente">[source] codigo fuente</option>
+                    <option value="[exe] codigo ejecutable">[exe] codigo ejecutable</option>
+                    <option value="[test] datos de prueba">[test] datos de prueba</option>
+                    <option value="[Keys] Claves criptograficas" disabled>[Keys] Claves criptograficas</option>
+                    <option value="[info] proteccion de la informacion">[info] proteccion de la informacion</option>
+                    <option value="[encrypt] claves de cifra">[encrypt] claves de cifra</option>
+                    <option value="[shared_secret] secreto compartido">[shared_secret] secreto compartido</option>
+                    <option value="[public_descryption] clave privada de descifrado">[public_descryption] clave privada de descifrado</option>
+                    <option value="[sign] claves de firma">[sign] claves de firma</option>
+                    <option value="[public_signature] clave privada de firma">[public_signature] clave privada de firma</option>
+                    <option value="[public_verification] clave publica de verificacion de firma">[public_verification] clave publica de verificacion de firma</option>
+                    <option value="[com] proteccion de las comunicaciones">[com] proteccion de las comunicaciones</option>
+                    <option value="[channel] claves de cifrado del canal">[channel] claves de cifrado del canal</option>
+                    <option value="[authentication] claves de autenticacion">[authentication] claves de autenticacion</option>
+                    <option value="[verificatio] claves de verificacion de autenticacion">[verificatio] claves de verificacion de autenticacion</option>
+                    <option value="[disk] cifrado de soportes de informacion">[disk] cifrado de soportes de informacion</option>
+                    <option value="[x509] certificados de clave publica">[x509] certificados de clave publica</option>
+                    <option value="[S] Servicios" disabled>[S] Servicios</option>
+                    <option value="[anon] anónimo">[anon] anónimo</option>
+                    <option value="[pub] al público en general">[pub] al público en general</option>
+                    <option value="[ext] a usuarios externos">[ext] a usuarios externos</option>
+                    <option value="[int] interno"> [int] interno</option>
+                    <option value="[www] world wide web">[www] world wide web</option>
+                    <option value="[telnet] acceso remoto a cuenta local">[telnet] acceso remoto a cuenta local</option>
+                    <option value="[email] correo electrónico">[email] correo electrónico</option>
+                    <option value="[file] almacenamiento de ficheros">[file] almacenamiento de ficheros</option>
+                    <option value="[ftp] transferencia de ficheros">[ftp] transferencia de ficheros</option>
+                    <option value="[edi] intercambio electrónico de datos">[edi] intercambio electrónico de datos</option>
+                    <option value="[dir] servicio de directorio">[dir] servicio de directorio</option>
+                    <option value="[idm] gestión de identidades">[idm] gestión de identidades</option>
+                    <option value="[ipm] gestión de privilegios">[ipm] gestión de privilegios</option>
+                    <option value="[pki] PKI - infraestructura de clave pública">[pki] PKI - infraestructura de clave pública</option>
+                    <option value="[SW] Aplicaciones" disabled>[S] Servicios</option>
+                    <option value="[prp] desarrollo propio">[prp] desarrollo propio</option>
+                    <option value="[sub] desarrollo a medida">[sub] desarrollo a medida</option>
+                    <option value="[std] estándar">[std] estándar</option>
+                    <option value="[browser] navegador web">[browser] navegador web</option>
+                    <option value="[www] servidor de presentación">[www] servidor de presentación</option>
+                    <option value="[app] servidor de aplicaciones">[app] servidor de aplicaciones</option>
+                    <option value="[email_client] cliente de correo electrónico">[email_client] cliente de correo electrónico</option>
+                    <option value="[email_server] servidor de correo electrónico">[email_server] servidor de correo electrónico</option>
+                    <option value="[file] servidor de ficheros">[file] servidor de ficheros</option>
+                    <option value="[dbms] sistema de gestión de bases de datos">[dbms] sistema de gestión de bases de datos</option>
+                    <option value="[tm] monitor transaccional">[tm] monitor transaccional</option>
+                    <option value="[office] ofimática">[office] ofimática</option>
+                    <option value="[av] anti viru">[av] anti viru</option>
+                    <option value="[os] sistema operativo">[os] sistema operativo</option>
+                    <option value="[hypervisor] gestor de máquinas virtuales">[hypervisor] gestor de máquinas virtuales</option>
+                    <option value="[ts] servidor de terminales">[ts] servidor de terminales</option>
+                    <option value="[backup] sistema de backup">[backup] sistema de backup</option>
+                    <option value="[HW] Equipos Informaticos" disabled>[HW] Equipos Informaticos</option>
+                    <option value="[host] grandes equipos">[host] grandes equipos</option>
+                    <option value="[mid] equipos medios">[mid] equipos medios</option>
+                    <option value="[pc] informática personal">[pc] informática personal</option>
+                    <option value="[mobile] informática móvil">[mobile] informática móvil</option>
+                    <option value="[pda] agendas electrónicas">[pda] agendas electrónicas</option>
+                    <option value="[vhost] equipo virtual">[vhost] equipo virtual</option>
+                    <option value="[backup] equipamiento de respaldo">[backup] equipamiento de respaldo</option>
+                    <option value="[peripheral] periféricos">[peripheral] periféricos</option>
+                    <option value="[print] medios de impresión">[print] medios de impresión</option>
+                    <option value="[scan] escáneres">[scan] escáneres</option>
+                    <option value="[crypto] dispositivos criptográficos">[crypto] dispositivos criptográficos</option>
+                    <option value="[bp] dispositivo de frontera">[bp] dispositivo de frontera</option>
+                    <option value="[network] soporte de la red"> [network] soporte de la red</option>
+                    <option value="[modem] módems">[modem] módems</option>
+                    <option value="[hub] concentradores">[hub] concentradores</option>
+                    <option value="[switch] conmutadores">[switch] conmutadores</option>
+                    <option value="[router] encaminadores">[router] encaminadores</option>
+                    <option value="[bridge] pasarelas">[bridge] pasarelas</option>
+                    <option value="[firewall] cortafuegos">[firewall] cortafuegos</option>
+                    <option value="[wap] punto de acceso inalámbrico">[wap] punto de acceso inalámbrico</option>
+                    <option value="[pabx] centralita telefónica"> [pabx] centralita telefónica</option>
+                    <option value="[ipphone] teléfono IP">[ipphone] teléfono IP</option>
+                    <option value="[COM] Redes de comunicaciones" disabled>[COM] Redes de comunicaciones</option>
+                    <option value="[PSTN] red telefónica">[PSTN] red telefónica</option>
+                    <option value="[ISDN] rdsi">[ISDN] rdsi</option>
+                    <option value="[X25] X25">[X25] X25</option>
+                    <option value="[ADSL] ADSL">[ADSL] ADSL</option>
+                    <option value="[pp] punto a punto">[pp] punto a punto</option>
+                    <option value="[radio] comunicaciones radio">[radio] comunicaciones radio</option>
+                    <option value="[wifi] red inalámbrica">[wifi] red inalámbrica</option>
+                    <option value="[mobile] telefonía móvil">[mobile] telefonía móvil</option>
+                    <option value="[sat] por satélite">[sat] por satélite</option>
+                    <option value="[LAN] red local">[LAN] red local</option>
+                    <option value="[MAN] red metropolitana">[MAN] red metropolitana</option>
+                    <option value="[Internet] Internet">[Internet] Internet</option>
+                    <option value="[Media] Soportes de Informacion" disabled>[Media] Soportes de Informacion</option>
+                    <option value="[electronic] electrónicos">[electronic] electrónicos</option>
+                    <option value="[disk] discos">[disk] discos</option>
+                    <option value="[vdisk] discos virtuales">[vdisk] discos virtuales</option>
+                    <option value="[san] almacenamiento en red">[san] almacenamiento en red</option>
+                    <option value="[disquette] disquetes">[disquette] disquetes</option>
+                    <option value="[cd] cederrón">[cd] cederrón</option>
+                    <option value="[usb] memorias USB">[usb] memorias USB</option>
+                    <option value="[dvd] DVD">[dvd] DVD</option>
+                    <option value="[tape] cinta magnética">[tape] cinta magnética</option>
+                    <option value="[mc] tarjetas de memoria">[mc] tarjetas de memoria</option>
+                    <option value="[ic] tarjetas inteligentes">[ic] tarjetas inteligentes</option>
+                    <option value="[non_electronic] no electrónicos">[non_electronic] no electrónicos</option>
+                    <option value="[printed] material impreso">[printed] material impreso</option>
+                    <option value="[tape] cinta de papel">[tape] cinta de papel</option>
+                    <option value="[film] microfilm">[film] microfilm</option>
+                    <option value="[cards] tarjetas perforadas">[cards] tarjetas perforadas</option>
+                    <option value="[AUX] Equipamiento auxiliar" disabled>[AUX] Equipamiento auxiliar</option>
+                    <option value="[power] fuentes de alimentación">[power] fuentes de alimentación</option>
+                    <option value="[ups] sistemas de alimentación ininterrumpida">[ups] sistemas de alimentación ininterrumpida</option>
+                    <option value="[gen] generadores eléctricos ">[gen] generadores eléctricos </option>
+                    <option value="[ac] equipos de climatización">[ac] equipos de climatización</option>
+                    <option value="[cabling] cableado">[cabling] cableado</option>
+                    <option value="[wire] cable eléctrico ">[wire] cable eléctrico </option>
+                    <option value="[fiber] fibra óptica">[fiber] fibra óptica</option>
+                    <option value="[robot] robots ">[robot] robots </option>
+                    <option value="[tape] ... de cintas ">[tape] ... de cintas </option>
+                    <option value="[disk] ... de discos">[disk] ... de discos</option>
+                    <option value="[supply] suministros esenciales">[supply] suministros esenciales</option>
+                    <option value="[destroy] equipos de destrucción de soportes de información">[destroy] equipos de destrucción de soportes de información</option>
+                    <option value="[furniture] mobiliario: armarios, etc">[furniture] mobiliario: armarios, etc</option>
+                    <option value="[safe] cajas fuertes">[safe] cajas fuertes</option>
+                    <option value="[L] Instalaciones" disabled>[L] Instalaciones</option>
+                    <option value="[site] recinto">[site] recinto</option>
+                    <option value="[building] edificio">[building] edificio</option>
+                    <option value="[local] cuarto">[local] cuarto</option>
+                    <option value="[mobile] plataformas móviles">[mobile] plataformas móviles</option>
+                    <option value="[car] vehículo terrestre: coche, camión, etc.">[car] vehículo terrestre: coche, camión, etc.</option>
+                    <option value="[plane] vehículo aéreo: avión, etc.">[plane] vehículo aéreo: avión, etc.</option>
+                    <option value="[ship] vehículo marítimo: buque, lancha, etc.">[ship] vehículo marítimo: buque, lancha, etc.</option>
+                    <option value="[shelter] contenedores">[shelter] contenedores</option>
+                    <option value="[channel] canalización">externas</option>
+                    <option value="[backup] instalaciones de respaldo">[backup] instalaciones de respaldo </option>
+                    <option value="[P] Personal" disabled>[P] Personal</option>
+                    <option value="[ue] usuarios externos">[ue] usuarios externos</option>
+                    <option value="[ui] usuarios internos">[ui] usuarios internos</option>
+                    <option value="[op] operadores">[op] operadores</option>
+                    <option value="[adm] administradores de sistemas">[adm] administradores de sistemas</option>
+                    <option value=" [com] administradores de comunicaciones"> [com] administradores de comunicaciones</option>
+                    <option value="[dba] administradores de BBDD">[dba] administradores de BBDD</option>
+                    <option value="[sec] administradores de seguridad">[sec] administradores de seguridad</option>
+                    <option value="[des] desarrolladores / programadores">[des] desarrolladores / programadores</option>
+                    <option value="[sub] subcontratas">[sub] subcontratas</option>
+                    <option value="[prov] proveedores">[prov] proveedores</option>
+                </select>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuarios" class="control-label"></label>
+                @*<select asp-for="UsuariosId" class="form-control" asp-items="ViewBag.Usuario"></select>*@
+                <select asp-for="UsuariosId" class="form-control">
+                    <option value="">----- Seleccione el usuario -----</option> 
+                    @foreach (var item in ViewBag.Usuario)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a la lista de activos</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
